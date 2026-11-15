@@ -1,0 +1,5 @@
+mach create "badger-cub"
+machine LoadPlatformDescription @platforms/cpus/rp2040.repl
+sysbus LoadELF @target/thumbv6m-none-eabi/release/badger-cub-fw
+machine StartGdbServer 3333
+start
