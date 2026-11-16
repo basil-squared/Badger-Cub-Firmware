@@ -1,10 +1,10 @@
 nvic: IRQControllers.NVIC @ sysbus 0xe000e000
-  systickFrequency: 1250000000
+    systickFrequency: 1250000000
 
 cpu0: CPU.CortexM @ sysbus
-  cpuType: "cortex-m0+"
-  nvic: nvic
-
+    cpuType: "cortex-m0+"
+    nvic: nvic
+# bleh bleh indents must be a multiple of 4 FUCK YOU
 flash: Memory.MappedMemory @ sysbus 0x10000000
     size: 0x00200000
 
