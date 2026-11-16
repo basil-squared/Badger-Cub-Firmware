@@ -1,6 +1,5 @@
 mach create "badger-cub"
 machine LoadPlatformDescription $CWD/sim/rp2040.repl
-passes immediately
 sysbus WriteDoubleWord 0x4000c008 0xffffffff
 
 sysbus LoadELF $CWD/target/thumbv6m-none-eabi/release/badger-cub-fw
