@@ -6,12 +6,9 @@ use core::panic::PanicInfo;
 use core::ptr::{read_volatile, write_volatile};
 
 // get vector table and _reset_handler into the bin 
+global_asm!(include_str!("boot2.S"));
 global_asm!(include_str!("start.S"));
 
-// temp stage-2 bootloader that i'll replace later
-#[unsafe(link_section = ".boot2")]
-#[used]
-pub static BOOT2: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
 
 // peripheral reg addresses that i ripped straight from the datasheet
 const RESETS_BASE: u32 = 0x4000_c000;

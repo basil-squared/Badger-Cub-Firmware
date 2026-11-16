@@ -1,7 +1,7 @@
 mach create "badger-cub"
 machine LoadPlatformDescription $CWD/sim/rp2040.repl
 sysbus WriteDoubleWord 0x4000c008 0xffffffff
-
+sysbus.cpu0 VectorTableOffset 0x10000100
 sysbus LoadELF $CWD/target/thumbv6m-none-eabi/release/badger-cub-fw
 machine StartGdbServer 3333
 start
